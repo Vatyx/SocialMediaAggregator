@@ -1,0 +1,22 @@
+{
+  "name": "socialmediaaggregator",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Sahil Dhanju <sahildhanju1@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Vatyx/SocialMediaAggregator",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
