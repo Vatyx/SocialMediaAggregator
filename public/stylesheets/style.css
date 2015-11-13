@@ -1,6 +1,13 @@
 body {
-  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #008000;
 }
-p {
-  color: #a9a9a9;
+.contentColumn {
+  border: 5px solid #000;
+  min-width: 100px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
 }
