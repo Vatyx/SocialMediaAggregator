@@ -2,7 +2,12 @@ var express = require("express");
 var stylus = require('stylus');
 var nib = require('nib');
 
+var routes = require('./routes/index');
+
 var app = express();
+
+app.set('views', __dirname + "/views");
+app.set('view engine', 'jade');
 
 function compile(str, path) {
   return stylus(str)
@@ -20,10 +25,7 @@ app.use(stylus.middleware(
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + '/public'));
 
-app.get("/", function(req, res)
-{
-	res.render('index.html');
-});
+app.use('/', routes);
 
 app.set('port', (process.env.PORT) || 5000)	;
 app.listen(app.get('port'), function() {
