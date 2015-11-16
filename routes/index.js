@@ -3,7 +3,6 @@ var router = express.Router();
 
 router.get("/", function(req, res)
 {
-	console.log("Looks like this is working");
 	res.render('index');
 	
 });
