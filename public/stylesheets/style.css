@@ -13,16 +13,30 @@ totalContainer {
 sidebarContainer {
   height: 100%;
 }
+circle {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-image: url("../images/facebook.png");
+  background-size: 100%;
+  box-sizing: border-box;
+  border: 5px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 19;
+}
 contentContainer {
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
+  border: 20px solid transparent;
   display: flex;
 }
 contentColumn {
   box-sizing: border-box;
   margin: 0 10px;
-  padding: 10px;
-  min-width: 300px;
   height: 90%;
   position: relative;
   transition: all 0.3s ease;
@@ -31,21 +45,21 @@ contentColumn {
   flex: 1;
   flex-direction: column;
   overflow-x: auto;
-  background-color: #fff;
+  background-color: transparent;
 }
-.something {
-  animation: flexsomething 1s ease-in-out;
+contentLister {
+  height: 100%;
+  margin-top: 70px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
 }
 .newitem {
   animation: flexGrow 500ms ease forwards;
   flex: 0.00001;
 }
 @-webkit-keyframes flexGrow {
-  to {
-    flex: 1;
-  }
-}
-@-o-keyframes flexGrow {
   to {
     flex: 1;
   }
@@ -59,26 +73,28 @@ content {
   background-color: #fff;
   box-sizing: border-box;
   box-shadow: 0 0 5px #888;
+  border-radius: 6px;
   align-self: center;
   flex-shrink: 0;
 }
-@-moz-keyframes flexGrow {
-  to {
-    flex: 1;
-  }
+.min-width {
+  min-width: 300px;
 }
-@-webkit-keyframes flexGrow {
-  to {
-    flex: 1;
-  }
+::-webkit-scrollbar {
+  width: 27px;
+  height: 27px;
 }
-@-o-keyframes flexGrow {
-  to {
-    flex: 1;
-  }
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
 }
-@keyframes flexGrow {
-  to {
-    flex: 1;
-  }
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border: 0px none #fff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #fff;
+  border-radius: 50px;
 }

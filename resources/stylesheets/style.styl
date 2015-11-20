@@ -1,8 +1,4 @@
 body
-	//height 100%
-	// width 100%
-	// // display flex
-	// background-color red
 	height: 100vh;
 	margin: 0;
 	padding 0
@@ -17,20 +13,36 @@ totalContainer
 
 sidebarContainer
 	height 100%
+
+circle
+	height 80px
+	width 80px
+	border-radius 50%
+	background-image url('../images/facebook.png')
+	background-size 100%
+	box-sizing border-box
+	border 5px solid white
+	position absolute
+	top 0
+	left 50%
+	transform translateX(-50%)
+	//transform translateY(-50%)
+	z-index 19
 	
 
 contentContainer
 	height 100%
 	width 100%
+	box-sizing border-box
+	border 20px solid transparent
 	display flex
 	
 	
 contentColumn
 	box-sizing border-box
-	//border 2px solid #ecf0f1
 	margin: 0 10px
-	padding: 10px
-	min-width 300px
+	//padding: 10px
+	//min-width 300px
 	height 90%
 	position relative
 	
@@ -41,28 +53,22 @@ contentColumn
 	flex 1
 	flex-direction column
 	overflow-x auto
-	background-color white
+	background-color transparent
 
-.something
-	animation flexsomething 1s ease-in-out
+contentLister
+	height 100%
+	margin-top 70px
+	padding 20px
+	display flex
+	flex-direction column
+	overflow-x auto
 
 .newitem
-	//@-webkit-animation flexGrow 500ms ease forwards
-	//@-o-animation flexGrow 500ms ease forwards
 	animation flexGrow 500ms ease forwards
+	//width 0px
 	flex .00001
 	
 @-webkit-keyframes flexGrow {
-	to {
-		flex: 1
-	}
-}
-@-o-keyframes flexGrow {
-	to {
-		flex: 1
-	}
-}
-@keyframes flexGrow {
 	to {
 		flex: 1
 	}
@@ -78,6 +84,29 @@ content
 	
 	box-sizing border-box
 	box-shadow 0 0 5px #888
-	
+	border-radius 6px
 	align-self center
 	flex-shrink 0
+	
+.min-width
+	min-width 300px
+	
+::-webkit-scrollbar {
+  width: 27px;
+  height: 27px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
