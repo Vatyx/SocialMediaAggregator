@@ -1,6 +1,7 @@
 var express = require("express");
 var stylus = require('stylus');
 var nib = require('nib');
+var fs = require('fs');
 
 var routes = require('./routes/index');
 
@@ -21,9 +22,10 @@ app.use(stylus.middleware(
   , compile: compile
   }
 ));
-
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + '/public'));
+
+var instagramAccess = "";
 
 app.use('/', routes);
 
