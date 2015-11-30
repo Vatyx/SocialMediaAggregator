@@ -16,6 +16,7 @@ var instagram_authorization_uri = oauth2.authCode.authorizeURL(
 
 router.get("/instagram", function(req, res)
 {
+	code = req.query.code;
 	res.render('index');
 	
 });
