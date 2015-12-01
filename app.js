@@ -6,6 +6,7 @@ var nib = require('nib');
 var fs = require('fs');
 
 var routes = require('./routes/index');
+var instagram_routes = require('./routes/instagram');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(express.static(__dirname + '/public'));
 var instagramAccess = "";
 
 app.use('/', routes);
+app.use('/', instagram_routes);
 
 app.set('port', (process.env.PORT) || 3000)	;
 app.listen(app.get('port'), function() {

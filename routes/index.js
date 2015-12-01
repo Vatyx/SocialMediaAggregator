@@ -7,6 +7,4 @@ router.get("/", function(req, res)
 	
 });
 
-console.log("In here");
-
 module.exports = router;
