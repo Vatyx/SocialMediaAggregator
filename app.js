@@ -1,4 +1,6 @@
+require('dotenv').load();
 var express = require("express");
+var cookieParser = require('cookie-parser'); 
 var stylus = require('stylus');
 var nib = require('nib');
 var fs = require('fs');

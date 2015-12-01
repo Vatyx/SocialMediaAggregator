@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Vatyx/SocialMediaAggregator#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.0",
+    "dotenv": "^1.2.0",
     "express": "4.13.3",
     "mongoose": "^4.2.8",
     "simple-oauth2": "^0.2.1"

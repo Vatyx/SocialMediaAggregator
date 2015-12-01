@@ -40,5 +40,5 @@ $("contentColumn").click(function()
 
 $("#instagram").click(function() 
 {
-	window.location.replace("https://api.instagram.com/oauth/authorize/?client_id=ad894ecb14cb4928bd00f5e4d8c2ae67&redirect_uri=http://localhost:3000&response_type=code");
+	window.location.replace("https://api.instagram.com/oauth/authorize/?client_id=ad894ecb14cb4928bd00f5e4d8c2ae67&response_type=code");
 });
