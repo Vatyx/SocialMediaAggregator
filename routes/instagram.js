@@ -1,37 +1,31 @@
 var express = require('express');
 var router = express.Router();
 
-app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'process.env.INSTAGRAM_URL');
-
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
+var instagramOauth2 = require('simple-oauth2')(
+{
+	clientID: "ad894ecb14cb4928bd00f5e4d8c2ae67",
+	clientSecret: "b5deae6b21be45259ccdd272998a2651",
+	site: 'https://instagram.com'
 });
 
-router.get('/auth', function(req, res)
+var instagram_authorization_uri = oauth2.authCode.authorizeURL(
 {
-	res.setHeader('Access-Control-Allow-Origin', '*');
-	res.redirect(process.env.INSTAGRAM_URL);
+	redirect_uri: 'http://localhost:3000/instagram_callback',
+	response_type: 'code'
 });
 
-router.get("/callback", function(req, res)
+
+router.get("/instagram", function(req, res)
 {
-	code = req.query.code;
 	res.render('index');
-	console.log(code);
 	
+});
+
+console.log("In here");
+
+fs.writeFile('instagramkey.txt', 'test', function(err, data)
+{
+	consolelog(data);n
 });
 
 module.exports = router;
