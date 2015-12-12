@@ -1,30 +1,30 @@
 var express = require('express');
 var router = express.Router();
 
-var instagramOauth2 = require('simple-oauth2')(
+router.get("/auth", function(req, res)
 {
-	clientID: "ad894ecb14cb4928bd00f5e4d8c2ae67",
-	clientSecret: "b5deae6b21be45259ccdd272998a2651",
-	site: 'https://instagram.com'
+	res.json({url: process.env.INSTAGRAM_URL});
 });
 
-var instagram_authorization_uri = oauth2.authCode.authorizeURL(
+router.get("/callback", function(req, res)
 {
-	redirect_uri: 'http://localhost:3000/instagram_callback',
-	response_type: 'code'
-});
+	request('http://www.google.com', function (error, response, body) {
+	  	if (!error && response.statusCode == 200) {
+	    	console.log(body) // Print the google web page.
+		}
+	});
 
-router.get("/instagram", function(req, res)
-{
+	var getMedia = function(error, response, body)
+	{
+
+	}
+
+	request("https://api.instagram.com/v1/users/self/", getMedia);
+
 	res.render('index');
 	
 });
 
 console.log("In here");
-
-fs.writeFile('instagramkey.txt', 'test', function(err, data)
-{
-	consolelog(data);n
-});
 
 module.exports = router;

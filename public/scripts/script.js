@@ -40,6 +40,9 @@ $("contentColumn").click(function()
 
 $("#instagram").click(function() 
 {
-	$.get("/instagram/auth");
+	$.getJSON("/instagram/auth", function(data)
+	{
+		window.location.replace(data.url);
+	});
 	//window.location.replace("https://api.instagram.com/oauth/authorize/?client_id=ad894ecb14cb4928bd00f5e4d8c2ae67&redirect_uri=http://localhost:3000/instagram_callback&response_type=code");
 });
