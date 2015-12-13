@@ -20,6 +20,7 @@ function compile(str, path) {
     .use(nib());
 }
 
+
 app.use(stylus.middleware(
   { src: __dirname + '/resources'
   ,	dest: __dirname + '/public'
